@@ -12,6 +12,12 @@
     box-sizing: border-box;
 }
 
+html {
+    /* This defines what 1rem is */
+	font-size: 62.5%; /*1rem = 10px; 10px/16px = 62.5%*/
+    scroll-snap-type: y mandatory;
+}
+
 button {
     background: transparent;
     border: none;
@@ -30,7 +36,7 @@ a {
 
 body {
     position: relative;
-    font: 16px/1.5 sans-serif;
+    /* font-family: 'Oleo Script', cursive; */
     color: var(--white);
 }
 
@@ -83,12 +89,36 @@ body {
     font-size: 1.5rem;
 }
 
+
+.page-section__hero {
+    padding: 10rem;
+    font-size: 2rem;
+    scroll-snap-align: start;
+    background-image: url(img/cover-bbq.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-section__food {
+    scroll-snap-align: start;
+    background-color: #ffffff;
+}
+
+.page-section__beer, .page-section__break, .page-section__about, .page-section__location {
+    scroll-snap-align: start;
+}
+
 .page-main section {
-    position: relative;
-    background-repeat: no-repeat;
+    display: flex;
+    /* position: relative; */
+    /* background-repeat: no-repeat; */
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    /* height: 100vh; */
+    /* max-height: 100%; */
 }
 
 .page-main section::before {
@@ -98,7 +128,43 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.25);
+    /* background: rgba(0, 0, 0, 0.25); */
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    font-family: 'Oleo Script', cursive;
+    font-size: 4rem;
+}
+.menu-div {
+    padding-bottom: 12rem;
+}
+
+.menu-button {
+    background-color: #fff;
+    border-radius: 100px;
+    height: 4.5rem;
+    width: 25rem;
+    text-decoration: none;
+    /* border-radius: 5px 20px 5px; */
+    transition: transform 250ms ease-in, box-shadow 250ms ease-in;
+}
+
+.menu-button:hover {
+    box-shadow: 0px 11px 18px rgba(0,0,0,0.3);
+    transform: scale(1.025);
+    /* box-shadow: 1px 7px 13px 0px rgba(67,0,17,0.13);
+    transform: scale(1.025); */
+    background-color: #8F1E49;
+}
+
+.menu-button__text {
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--color-primary-white);
+    text-transform: uppercase;
+    font-family: 'Cherry Cream Soda', cursive;
 }
 
 /* FOOTER
@@ -146,5 +212,7 @@ body {
 }
 
 section {
-    background-image: url(img/background-5070834_960_720.webp);
+    /* background-image: url(img/background-5070834_960_720.webp); */
+    height: 100vh;
+    width: 100vw;
 }
